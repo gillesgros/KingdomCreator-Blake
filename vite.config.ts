@@ -32,7 +32,7 @@ export default defineConfig( ({ mode}) => {
 
   return {
     appType: 'spa',
-    base: './',
+    base: '/KingdomCreator-Blake/',
     publicDir: false, //  Do not use publicDir feature to avoid duplcation of all image and pdf files.
     /*
     Do not use publicDir feature to avoid duplcation of all image and pdf files.
