@@ -34,7 +34,7 @@ export default defineConfig( ({ mode}) => {
 
   return {
     appType: 'spa',
-    base : baseDir,
+    base: baseDir,
     publicDir: false, //  Do not use publicDir feature to avoid duplcation of all image and pdf files.
     /*
     Do not use publicDir feature to avoid duplcation of all image and pdf files.
@@ -47,19 +47,28 @@ export default defineConfig( ({ mode}) => {
     },
     plugins: [
       { name: 'add-datetime',
+        /* vite hook the plugin should use: transformIndexHtml()
+        https://vitejs.dev/guide/api-plugin#universal-hooks */
         transformIndexHtml(html) {
           const datetime = new Date().toLocaleString('fr-FR', { dateStyle: 'long', timeStyle: 'medium' });
-          console.log('\nGenerate Date and Time: ', datetime);
+          //console.log('\nGenerate Date and Time: ', datetime);
           return html.replace(/id="datetime">/g, `id="datetime">${datetime}`);
         }
       },
       {
         name: 'copy-index',
+        /* vite hook the plugin should use: closeBundle()
+        https://vitejs.dev/guide/api-plugin#universal-hooks */
         closeBundle() {
+          try {
           fs.copyFileSync(
             path.resolve(__dirname, './'+ publicationDir +'/index.html'), 
             path.resolve(__dirname, './'+ publicationDir +'/404.html'))
-        },
+          } catch (err) {
+            if (err) throw err;
+            console.log('index.html copied successfully');
+          }
+        }
       },
       vue(),
       legacy({ targets: ['defaults'] }),
@@ -85,8 +94,7 @@ export default defineConfig( ({ mode}) => {
         verbose: false
       }),
        viteStaticCopy({
-        targets: [ { src: 'styles/normalize-v8.css', dest: 'assets/' },
-           { src : 'docs/index.html', dest: 'assets/'}
+        targets: [ { src: 'styles/normalize-v8.css', dest: 'assets/' }
           ]
       })
     ],
