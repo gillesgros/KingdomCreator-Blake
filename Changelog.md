@@ -12,7 +12,7 @@ Feel free to propose any improvements you see fit and send me a pull request!
 it uses vue 3, vite.js, Pinia, vue-i18n and node.js v20
 
 ### Changelog
-2024/10/21 - 6.4.0
+2024/10/29 - 6.4.0
 Dev deploy on github pages
   Feat - include RisingSun and prophecies
   Feat - add option to exclude cards from randomization

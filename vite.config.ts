@@ -3,7 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import packageJson from './package.json';
 
-import VueDevTools from 'vite-plugin-vue-devtools'
+//import VueDevTools from 'vite-plugin-vue-devtools'
 import vue from '@vitejs/plugin-vue';
 import legacy from '@vitejs/plugin-legacy'
 import vueI18n from '@intlify/unplugin-vue-i18n/vite';
