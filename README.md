@@ -8,7 +8,7 @@ It is a kingdom randomizer, or card picker, for Dominion.
 Feel free to propose any improvements you see fit and send me a pull request!
 
 ### Changelog
-2024/12/21 - 6.4.2
+2024/12/22 - 6.4.2
 Dev deploy on github pages
   Feat - RisingSun: finalizing
   Feat - Recommended kingdoms: Add a link to start building a randomized deck based on it
