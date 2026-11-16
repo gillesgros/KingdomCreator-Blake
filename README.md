@@ -7,7 +7,10 @@ It is a kingdom randomizer, or card picker, for Dominion.
 
 Feel free to propose any improvements you see fit and send me a pull request!
 
-### Changelog
+## Changelog
+**2026/11/13 - 7.1.18** - Handling mutiple rlease of rules
+>***Feat*** (see [Changelog.md](./Changelog.md))
+
 **2026/11/11 - 7.1.17** - Handling mutiple rlease of rules
 >***Feat*** (see [Changelog.md](./Changelog.md))
 
